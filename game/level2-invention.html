@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 2 Invention</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">Level 2</div>
+        <div class="instruction">
+            <div class="success-message">
+                Congratulations! You have earned an invention
+            </div>
+            <button class="play-button" onclick="goBackToLevelSelect()">NEXT LEVEL</button>
+        </div>
+        <div class="temperature">Temperature: 33%</div>
+        <div class="fan-container">
+            <img src="fan.png" alt="Fan" class="fan-image">
+            <img src="water.png" alt="Water Splash" class="water-image">
+        </div>
+    </div>
+
+    <script>
+        function goBackToLevelSelect() {
+            window.location.href = "level-select.html";
+        }
+    </script>
+</body>
+</html>
