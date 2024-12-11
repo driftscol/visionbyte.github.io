@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 1</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Level 1</div>
+        <div class="instruction">The number is between 1 and 5</div>
+
+        <div class="number-grid">
+            <button class="number-button" onclick="checkAnswer(1)">1</button>
+            <button class="number-button" onclick="checkAnswer(2)">2</button>
+            <button class="number-button" onclick="checkAnswer(3)">3</button>
+            <button class="number-button" onclick="checkAnswer(4)">4</button>
+            <button class="number-button" onclick="checkAnswer(5)">5</button>
+            <button class="number-button" onclick="checkAnswer(6)">6</button>
+            <button class="number-button" onclick="checkAnswer(7)">7</button>
+            <button class="number-button" onclick="checkAnswer(8)">8</button>
+            <button class="number-button" onclick="checkAnswer(9)">9</button>
+        </div>
+
+        <div id="result-message" class="result-message"></div>
+        <button id="next-level-btn" class="play-button" onclick="goToNextLevel()" style="display: none;">NEXT LEVEL</button>
+        <button id="try-again-btn" class="play-button" onclick="resetLevel()" style="display: none; background-color: red;">TRY AGAIN</button>
+    </div>
+
+    <script>
+        function checkAnswer(number) {
+            const correctAnswer = 4;
+            const resultMessage = document.getElementById("result-message");
+            const nextLevelBtn = document.getElementById("next-level-btn");
+            const tryAgainBtn = document.getElementById("try-again-btn");
+
+            if (number === correctAnswer) {
+                resultMessage.textContent = "CORRECT!";
+                resultMessage.classList.add("correct");
+                resultMessage.classList.remove("wrong");
+                resultMessage.style.display = "block";
+                nextLevelBtn.style.display = "block";
+                tryAgainBtn.style.display = "none";
+            } else {
+                resultMessage.textContent = "WRONG!";
+                resultMessage.classList.add("wrong");
+                resultMessage.classList.remove("correct");
+                resultMessage.style.display = "block";
+                tryAgainBtn.style.display = "block";
+                nextLevelBtn.style.display = "none";
+            }
+        }
+
+        function resetLevel() {
+            document.getElementById("result-message").style.display = "none";
+            document.getElementById("next-level-btn").style.display = "none";
+            document.getElementById("try-again-btn").style.display = "none";
+        }
+
+        function goToNextLevel() {
+            window.location.href = "level1-success.html";
+        }
+    </script>
+</body>
+</html>
